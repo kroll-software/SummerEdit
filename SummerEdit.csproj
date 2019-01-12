@@ -53,8 +53,4 @@
       <Name>SummerGUI</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="OpenTK.dll.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
 </Project>

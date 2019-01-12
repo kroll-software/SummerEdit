@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("detlef")]
+[assembly: AssemblyCopyright ("Kroll-Software")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 

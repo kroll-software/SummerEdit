@@ -40,6 +40,15 @@ namespace SummerEdit
 
 			m_Editor.Focus ();
 		}
-	}
+
+        protected override void Dispose(bool manual)
+        {
+            if (manual)
+            {
+                // Dispose your objects here
+            }
+            base.Dispose(manual);
+        }
+    }
 }
 
