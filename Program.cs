@@ -96,24 +96,17 @@ namespace SummerEdit
 			ConfigurationService.Instance.InitConfig (configFileName);
 		}
 
-		public static SummerGUIWindow MainWindow { get; private set; }
+        public static SummerGUIWindow MainWindow { get; private set; }
 
-		//[STAThread]
-		static void Main(string[] args)
+        //[STAThread]
+        static void Main(string[] args)
 		{
 			// Setup logging
 			Logging.SetupLogging (LogLevels.Verbose, LogTargets.Console);
 
 			// Setup global exception handlers
 			AppDomain.CurrentDomain.UnhandledException += ExceptionUnhandled;
-			AppDomain.CurrentDomain.FirstChanceException += AppDomain_CurrentDomain_FirstChanceException;
-
-			// Setup the GUI language
-			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-			Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-
-			CultureInfo.DefaultThreadCurrentCulture = Thread.CurrentThread.CurrentCulture;
-			CultureInfo.DefaultThreadCurrentUICulture = Thread.CurrentThread.CurrentUICulture;
+			AppDomain.CurrentDomain.FirstChanceException += AppDomain_CurrentDomain_FirstChanceException;            		
 
 			// This step is required.
 			// Since we can't make this static class inheritable,
@@ -129,14 +122,15 @@ namespace SummerEdit
 
 			InitApplication ();
 
-			// don't use SDL2
-			OpenTK.ToolkitOptions.Default.Backend = OpenTK.PlatformBackend.PreferNative;
-			OpenTK.Toolkit.Init ();
+            // >>> Bug in OpenTK: Program hangs on Exit, when using this option..
+            // don't use SDL2
+            //OpenTK.ToolkitOptions.Default.Backend = OpenTK.PlatformBackend.PreferNative;
+            //OpenTK.Toolkit.Init ();
 
-			// testing the ThemeLoader class
-			//ThemeLoader loader = new ThemeLoader (Strings.ApplicationPath (true) + "ColorTheme.config");
+            // testing the ThemeLoader class
+            //ThemeLoader loader = new ThemeLoader (Strings.ApplicationPath (true) + "ColorTheme.config");
 
-			using (MainForm wnd = new MainForm ()) {
+            using (MainForm wnd = new MainForm ()) {
 				MainWindow = wnd;
 				// The frame rate is throttled to a value between 30 and 60 Hz
 				// depending on the monitor device refresh rate.
