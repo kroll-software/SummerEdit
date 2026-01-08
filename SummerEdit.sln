@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Foundation", "..\KS.Foundation\KS.Foundation.csproj", "{E6E61A5B-88B0-4B3B-9416-B17461E6F26F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummerGUI", "..\SummerGUI\SummerGUI.csproj", "{E1F76126-F639-4BDB-A8EA-3F6A794D1AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummerEdit", "SummerEdit.csproj", "{19692707-0F97-45A9-BC9F-D03EABE4CB23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6E61A5B-88B0-4B3B-9416-B17461E6F26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E61A5B-88B0-4B3B-9416-B17461E6F26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E61A5B-88B0-4B3B-9416-B17461E6F26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E61A5B-88B0-4B3B-9416-B17461E6F26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F76126-F639-4BDB-A8EA-3F6A794D1AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F76126-F639-4BDB-A8EA-3F6A794D1AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F76126-F639-4BDB-A8EA-3F6A794D1AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F76126-F639-4BDB-A8EA-3F6A794D1AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19692707-0F97-45A9-BC9F-D03EABE4CB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19692707-0F97-45A9-BC9F-D03EABE4CB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19692707-0F97-45A9-BC9F-D03EABE4CB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19692707-0F97-45A9-BC9F-D03EABE4CB23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8CCCA13-1C3D-4EAB-AD39-88834FD96638}
+	EndGlobalSection
+EndGlobal

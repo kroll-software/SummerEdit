@@ -98,7 +98,7 @@ namespace SummerEdit
 
         public static SummerGUIWindow MainWindow { get; private set; }
 
-        //[STAThread]
+        [STAThread]
         static void Main(string[] args)
 		{
 			// Setup logging

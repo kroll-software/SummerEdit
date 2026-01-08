@@ -35,11 +35,17 @@ namespace SummerEdit
                 if (Strings.FileExists(fpath))
                 {
                     ShowStatus(String.Format("Loading {0}..", Strings.GetFilename(fpath)), true);
-                    System.Threading.Tasks.Task.Factory.StartNew(() => {
+                    System.Threading.Tasks.Task.Factory.StartNew(() =>
+                    {
                         m_Editor.FilePath = fpath;
                         m_Editor.Text = TextFile.LoadTextFile(fpath);
-                    }).ContinueWith(t => ShowStatus());
+                    });
                 }
+            };
+
+            m_Editor.Editor.RowManager.LoadingCompleted += (sender, e) =>
+            {
+                ShowStatus();
             };
 
             mnuSave = this.MenuPanel.MainMenu.FindItem("Save");
