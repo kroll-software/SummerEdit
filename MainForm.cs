@@ -29,16 +29,16 @@ namespace SummerEdit
             };
 
             mnuOpen = this.MenuPanel.MainMenu.FindItem("Open");
-            mnuOpen.Click += (object sender, EventArgs e) => {
-                SummerGUI.SystemSpecific.Linux.SystemDialogs dlg = new SummerGUI.SystemSpecific.Linux.SystemDialogs();
-                string fpath = dlg.OpenFileDialog("Open File", this);
-                if (Strings.FileExists(fpath))
+            mnuOpen.Click += (object sender, EventArgs e) => {                
+                OpenFileDialog dlg = new OpenFileDialog();
+                var result = dlg.ShowDialog(this, "Open File", "Text files (*.txt)|*.txt|All files (*.*)|*.*");                
+                if (result == DialogResult.OK && Strings.FileExists(dlg.FileName))
                 {
-                    ShowStatus(String.Format("Loading {0}..", Strings.GetFilename(fpath)), true);
-                    System.Threading.Tasks.Task.Factory.StartNew(() =>
+                    ShowStatus(String.Format("Loading {0}..", Strings.GetFilename(dlg.FileName)), true);
+                    Task.Run(() =>
                     {
-                        m_Editor.FilePath = fpath;
-                        m_Editor.Text = TextFile.LoadTextFile(fpath);
+                        m_Editor.FilePath = dlg.FileName;
+                        m_Editor.Text = TextFile.LoadTextFile(dlg.FileName);
                     });
                 }
             };
