@@ -32,7 +32,7 @@ namespace SummerEdit
             mnuOpen.Click += (object sender, EventArgs e) => {                
                 OpenFileDialog dlg = new OpenFileDialog();
                 var result = dlg.ShowDialog(this, "Open File", "Text files (*.txt)|*.txt|All files (*.*)|*.*");                
-                if (result == DialogResult.OK && Strings.FileExists(dlg.FileName))
+                if (result == DialogResults.OK && Strings.FileExists(dlg.FileName))
                 {
                     ShowStatus(String.Format("Loading {0}..", Strings.GetFilename(dlg.FileName)), true);
                     Task.Run(() =>
